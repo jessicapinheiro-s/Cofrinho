@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cofrinho</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="formulario-container">
+        <div class="formulario">
+            
+                <div class="input-formulario">
+                    <input type="number" id="valorMoeda">
+                </div>
+                <div class="radios-formulario">
+                    <input type="radio" id="moedaReal" name="moeda">
+                    <label for="moedaReal">Real</label>
+                    <input type="radio" id="moedaDolar" name="moeda">
+                    <label for="moedaDolar">Dolar</label>
+                    <input type="radio" id="moedaEuro" name="moeda">
+                    <label for="moedaEuro">Euro</label>
+                </div>
+                <div class="botoes-formulario">
+                    <button id="btAdicionar">Adicionar</button>
+                    <button id="btSomar">Converter e somar total</button>
+                    <button id="btListarMoedas">Listar moedas</button>
+                </div>
+               
+            
+        </div>
+    </div>
+
+    <div class="list"></div>
+    <div class="cofre">
+        <div class="moedaRealConvertida" id="moedaRealConvertida"></div>
+        <div class="moedaDolarConvertida" id="moedaDolarConvertida"></div>
+        <div class="moedaEuroConvertida" id="moedaEuroConvertida"></div>
+    </div>
+    <div class="resposta" id="resposta"></div>
+    <div class="total-todas-qtd-moedas-cofrinho">
+
+    </div>
+    <script src="cofrinho.js"></script>
+
+</body>
+
+</html>
