@@ -18,7 +18,7 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
 
     let resp = document.querySelector('div.resposta');
     let totalQtdMoedas = document.querySelector('div.total-todas-qtd-moedas-cofrinho');
-
+    let tipo;
 
     let convertidaRealMoeda = document.querySelector('div.moedaRealConvertida');
     let convertidaDolarMoeda = document.querySelector('div.moedaDolarConvertida');
@@ -31,36 +31,43 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
     } else {
         if (tipoMoeda[0].checked) {
             contadorReal++;
-
-
-            let o = 0;
-            for (let i = 0; i < cofrinho.length; i++) {
-                o += cofrinho[i].moedaValor;
+            tipo = 'Real';
+            let cofrinhoreal = [];
+            cofrinhoreal.push({valorReal: valorMoeda});                           
+            let o = '';
+            for (let i = 0; i < cofrinhoreal.length; i++) {
+                o += cofrinhoreal[i].valorReal;
             }
-            convertidaRealMoeda.innerHTML = `<p>Moeda adicionada = ${o} Reais </p>  `;
+            convertidaRealMoeda.innerHTML += `<p>Moeda adicionada = ${o} Reais </p>  `;
 
         } else if (tipoMoeda[1].checked) {
             contadorDolar++;
+            tipo = 'Dolar';
 
-
-            let oui = 0;
-            for (let i = 0; i < cofrinho.length; i++) {
-                oui += cofrinho[i];
+            let cofrinhodolar = [];
+            cofrinhodolar.push({valorDolar: valorMoeda});                           
+            let oui = '';
+            for (let i = 0; i < cofrinhodolar.length; i++) {
+                oui += cofrinhodolar[i].valorDolar;
             }
-            convertidaDolarMoeda.innerHTML = `<p>Moeda adicionada = ${oui} Dólares </p>  `;
+            convertidaDolarMoeda.innerHTML += `<p>Moeda adicionada = ${oui} Dólares </p>  `;
 
         } else {
             contadorEuro++;
-
-            let oi = 0;
-            for (let i = 0; i < cofrinho.length; i++) {
-                oi += cofrinho[i];
+            tipo = 'Euro';
+            
+            let cofrinhoeuro = [];
+            cofrinhoeuro.push({valorEuro: valorMoeda});                           
+            let oi = '';
+            for (let i = 0; i < cofrinhoeuro.length; i++) {
+                oi += cofrinhoeuro[i].valorEuro;
             }
-            convertidaEuroMoeda.innerHTML = `<p>Moeda adicionada = ${oi} Euros </p>`;
+
+            convertidaEuroMoeda.innerHTML += `<p>Moeda adicionada = ${oi} Euros </p>`;
 
 
         }
-        cofrinho.push({ moedaValor: valorMoeda });
+        cofrinho.push({ moedaValor: valorMoeda, tipodeMoeda: tipo });
 
         //chama a função que vai listar as moedas adicionadas
         listarMoedas(tipoMoeda);
@@ -69,7 +76,7 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
         styleResposta();
 
         //Total de moedas no cofrinho
-        totalQtdMoedas.innerHTML = `${cofrinho.length} total de moedas no cofrinho`;
+        totalQtdMoedas.innerHTML = `<p>Total moedas</p> <p>${cofrinho.length}</p>`;
     }
 
 })
@@ -86,13 +93,14 @@ function listarMoedas(z) {
 
 
     for (let i = 0; i < cofrinho.length; i++) {
-        resp = '';
+        resp.innerHTML = '';
+
         if (z[0].checked) {
-            resp += `Moeda: Real | Valor= R$${cofrinho[i].moedaValor}`;
+            resp  += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor= R$ ${cofrinho[i].moedaValor}</p>`;
         } else if (z[1].checked) {
-            resp +=  `Moeda: Dólar | Valor= $${cofrinho[i].moedaValor}`;
+            resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor= $  ${cofrinho[i].moedaValor}</p>`;
         } else {
-            resp +=  `Moeda: Euro | Valor=${cofrinho[i].moedaValor}`;
+            resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor=    ${cofrinho[i].moedaValor}</p>`;
            
         } list.innerHTML = `${resp}`;
 
@@ -145,27 +153,7 @@ document.getElementById('btSomar').addEventListener('click', function calcularTo
     let resp = document.querySelector('div.resposta');
     let list = document.querySelector('div.list');
 
-    if (cofrinho.length == 0) {
-        return resp.innerHTML = `Não há moedas no cofrinho`;
-    } else {
-        let listEuroMoeda = 0;
-        for (let i = 0; i < euro.length; i++) {
-            listEuroMoeda += cofrinho[i].euro * euroValor;
-        }
-
-        let listDolarMoeda = 0;
-        for (let i = 0; i < dolar.length; i++) {
-            listDolarMoeda += cofrinho[i].dolar * dolarValor;
-        }
-
-        let listRealMoeda = 0;
-        for (let i = 0; i < real.length; i++) {
-            listRealMoeda += cofrinho[i].euro;
-        }
-
-        list.innerHTML = `${listEuroMoeda + listDolarMoeda + listRealMoeda}`;
-    }
-
+  
 })
 
 
