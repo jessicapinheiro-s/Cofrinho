@@ -10,6 +10,10 @@ let contadorEuro = 0;
 //var que armazena o cofrinho
 let cofrinho = [];
 
+let cofrinhoreal = [];
+let cofrinhodolar = [];
+let cofrinhoeuro = [];
+
 document.getElementById('btAdicionar').addEventListener('click', function addMoedaCofrinho() {
     let tipoMoeda = document.getElementsByName('moeda');
     let invalorMoeda = document.getElementById('valorMoeda');
@@ -32,8 +36,8 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
         if (tipoMoeda[0].checked) {
             contadorReal++;
             tipo = 'Real';
-            let cofrinhoreal = [];
-            cofrinhoreal.push({valorReal: valorMoeda});                           
+
+            cofrinhoreal.push({ valorReal: valorMoeda });
             let o = '';
             for (let i = 0; i < cofrinhoreal.length; i++) {
                 o += cofrinhoreal[i].valorReal;
@@ -44,8 +48,8 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
             contadorDolar++;
             tipo = 'Dolar';
 
-            let cofrinhodolar = [];
-            cofrinhodolar.push({valorDolar: valorMoeda});                           
+
+            cofrinhodolar.push({ valorDolar: valorMoeda });
             let oui = '';
             for (let i = 0; i < cofrinhodolar.length; i++) {
                 oui += cofrinhodolar[i].valorDolar;
@@ -55,9 +59,9 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
         } else {
             contadorEuro++;
             tipo = 'Euro';
-            
-            let cofrinhoeuro = [];
-            cofrinhoeuro.push({valorEuro: valorMoeda});                           
+
+
+            cofrinhoeuro.push({ valorEuro: valorMoeda });
             let oi = '';
             for (let i = 0; i < cofrinhoeuro.length; i++) {
                 oi += cofrinhoeuro[i].valorEuro;
@@ -99,9 +103,9 @@ function listarMoedas(z) {
             resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor= $  ${cofrinho[i].moedaValor}</p>`;
         } else {
             resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor=    ${cofrinho[i].moedaValor}</p>`;
-           
-        } 
-    }list.innerHTML = `<p>Cofrinho</p>${resp}`;
+
+        }
+    } list.innerHTML = `<p>Cofrinho</p>${resp}`;
 }
 //função para estilo da página
 function styleResposta() {
@@ -140,18 +144,55 @@ function styleResposta() {
 
     todaMoedas.style.backgroundColor = `#35f`;
 
-    list.style.width= '250px';
+    list.style.width = '250px';
     list.style.backgroundColor = '#42e';
     list.style.margin = '20px auto 20px';
 }
 
 document.getElementById('btSomar').addEventListener('click', function calcularTotal() {
-    let resp = document.querySelector('div.resposta');
-    let list = document.querySelector('div.list');
 
-    
-  
+    let totalDolar = '';
+    for (let i = 0; i < cofrinhodolar.length; i++) {
+        totalDolar += cofrinhodolar[i].valorDolar;
+    }
+    alert(totalDolar * dolarValor);
+
+    let totalReal = '';
+    for (let i = 0; i < cofrinhoreal.length; i++) {
+        totalReal += cofrinhoreal[i].valorReal;
+    }
+    alert(totalReal * realValor);
+
+    let totalEuro = '';
+    for (let i = 0; i < cofrinhoeuro.length; i++) {
+        totalEuro += cofrinhoeuro[i].valorEuro;
+    }
+    alert(totalEuro * euroValor);
+
+
 })
 
+
+
+document.getElementById('btRemover').addEventListener('click', function calcularTotal() {
+
+
+    let invalorMoeda = document.getElementById('valorMoeda');
+    let valorMoeda = Number(invalorMoeda.value);
+
+    alert("Digite o valor a ser removido e selecione a moeda");
+
+    invalorMoeda.focus();
+    if (z[0].checked) {
+        resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor= R$ ${cofrinho[i].moedaValor}</p>`;
+    } else if (z[1].checked) {
+        resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor= $  ${cofrinho[i].moedaValor}</p>`;
+    } else {
+        resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor=    ${cofrinho[i].moedaValor}</p>`;
+
+    }
+
+
+})
 
 
