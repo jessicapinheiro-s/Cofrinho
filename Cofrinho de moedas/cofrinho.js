@@ -82,16 +82,19 @@ function validacao(y) {
 //função que lista as moedas adicionadas
 function listarMoedas(z) {
     let list = document.querySelector('div.list');
-    let resp = document.querySelector()
-    let listEuroMoeda = '';
+    let resp = document.querySelector('div.resposta');
+
+
     for (let i = 0; i < cofrinho.length; i++) {
+        resp = '';
         if (z[0].checked) {
-            listEuroMoeda += 'Moeda: Real ' + '| Valor= R$' + cofrinho[i].moedaValor;
+            resp += `Moeda: Real | Valor= R$${cofrinho[i].moedaValor}`;
         } else if (z[1].checked) {
-            listEuroMoeda += ' Moeda: Dolar' + 'Valor= $' + cofrinho[i].moedaValor;
+            resp +=  `Moeda: Dólar | Valor= $${cofrinho[i].moedaValor}`;
         } else {
-            listEuroMoeda += ' Moeda: Euro' + 'Valor= ' + cofrinho[i].moedaValor;
-        } list.innerHTML = `${listEuroMoeda}`;
+            resp +=  `Moeda: Euro | Valor=${cofrinho[i].moedaValor}`;
+           
+        } list.innerHTML = `${resp}`;
 
 
     }
