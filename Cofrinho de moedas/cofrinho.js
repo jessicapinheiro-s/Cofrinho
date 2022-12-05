@@ -91,21 +91,17 @@ function listarMoedas(z) {
     let list = document.querySelector('div.list');
     let resp = document.querySelector('div.resposta');
 
-
+    resp = '';
     for (let i = 0; i < cofrinho.length; i++) {
-        resp.innerHTML = '';
-
         if (z[0].checked) {
-            resp  += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor= R$ ${cofrinho[i].moedaValor}</p>`;
+            resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor= R$ ${cofrinho[i].moedaValor}</p>`;
         } else if (z[1].checked) {
             resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor= $  ${cofrinho[i].moedaValor}</p>`;
         } else {
             resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor=    ${cofrinho[i].moedaValor}</p>`;
            
-        } list.innerHTML = `${resp}`;
-
-
-    }
+        } 
+    }list.innerHTML = `<p>Cofrinho</p>${resp}`;
 }
 //função para estilo da página
 function styleResposta() {
@@ -153,6 +149,7 @@ document.getElementById('btSomar').addEventListener('click', function calcularTo
     let resp = document.querySelector('div.resposta');
     let list = document.querySelector('div.list');
 
+    
   
 })
 
