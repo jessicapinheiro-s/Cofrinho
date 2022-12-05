@@ -104,7 +104,11 @@ function styleResposta() {
     let convertidaRealMoeda = document.getElementById('moedaRealConvertida');
     let convertidaDolarMoeda = document.getElementById('moedaDolarConvertida');
     let convertidaEuroMoeda = document.getElementById('moedaEuroConvertida');
+
+    let todaMoedas = document.getElementById('total-todas-qtd-moedas-cofrinho');
+
     let resp = document.getElementById('resposta');
+    let list = document.getElementById('list');
 
 
     //cor de fundo dos conteiners div
@@ -117,6 +121,10 @@ function styleResposta() {
     convertidaDolarMoeda.style.padding = "10px";
     convertidaEuroMoeda.style.padding = "10px";
 
+    convertidaRealMoeda.style.width = "30%";
+    convertidaDolarMoeda.style.width = "30%";
+    convertidaEuroMoeda.style.width = "30%";
+
     //resp
     resp.style.textAlign = 'center';
     resp.style.backgroundColor = '#054F77';
@@ -126,6 +134,11 @@ function styleResposta() {
     resp.style.fontSize = '1.5rem';
     resp.style.borderRadius = '8px';
 
+    todaMoedas.style.backgroundColor = `#35f`;
+
+    list.style.width= '250px';
+    list.style.backgroundColor = '#42e';
+    list.style.margin = '20px auto 20px';
 }
 
 document.getElementById('btSomar').addEventListener('click', function calcularTotal() {
