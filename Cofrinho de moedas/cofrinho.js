@@ -1,12 +1,14 @@
 const realValor = 1;
 const dolarValor = 4;
 const euroValor = 6;
+
 //contadores para cada vez que uma moeda for add ao cofre
 let contadorReal = 0;
 let contadorDolar = 0;
 let contadorEuro = 0;
 
-const cofrinho = [];
+//var que armazena o cofrinho
+let cofrinho = [];
 
 document.getElementById('btAdicionar').addEventListener('click', function addMoedaCofrinho() {
     let tipoMoeda = document.getElementsByName('moeda');
@@ -16,7 +18,7 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
 
     let resp = document.querySelector('div.resposta');
     let totalQtdMoedas = document.querySelector('div.total-todas-qtd-moedas-cofrinho');
-    
+
 
     let convertidaRealMoeda = document.querySelector('div.moedaRealConvertida');
     let convertidaDolarMoeda = document.querySelector('div.moedaDolarConvertida');
@@ -29,18 +31,18 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
     } else {
         if (tipoMoeda[0].checked) {
             contadorReal++;
-            
-            
+
+
             let o = 0;
             for (let i = 0; i < cofrinho.length; i++) {
                 o += cofrinho[i].moedaValor;
             }
             convertidaRealMoeda.innerHTML = `<p>Moeda adicionada = ${o} Reais </p>  `;
-            
+
         } else if (tipoMoeda[1].checked) {
             contadorDolar++;
-            
-            
+
+
             let oui = 0;
             for (let i = 0; i < cofrinho.length; i++) {
                 oui += cofrinho[i];
@@ -49,7 +51,7 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
 
         } else {
             contadorEuro++;
-  
+
             let oi = 0;
             for (let i = 0; i < cofrinho.length; i++) {
                 oi += cofrinho[i];
@@ -59,14 +61,15 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
 
         }
         cofrinho.push({ moedaValor: valorMoeda });
-    
-        //listarMoedas(euro, real, dolar);
-        
+
+        //chama a função que vai listar as moedas adicionadas
+        listarMoedas(tipoMoeda);
+
         //função que ajusta o estilo da pagina via js
         styleResposta();
-        
+
         //Total de moedas no cofrinho
-        totalQtdMoedas.innerHTML = `${cofrinho.length}`;
+        totalQtdMoedas.innerHTML = `${cofrinho.length} total de moedas no cofrinho`;
     }
 
 })
@@ -74,6 +77,23 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
 function validacao(y) {
     if (y == '') {
         return true;
+    }
+}
+//função que lista as moedas adicionadas
+function listarMoedas(z) {
+    let list = document.querySelector('div.list');
+    let resp = document.querySelector()
+    let listEuroMoeda = '';
+    for (let i = 0; i < cofrinho.length; i++) {
+        if (z[0].checked) {
+            listEuroMoeda += 'Moeda: Real ' + '| Valor= R$' + cofrinho[i].moedaValor;
+        } else if (z[1].checked) {
+            listEuroMoeda += ' Moeda: Dolar' + 'Valor= $' + cofrinho[i].moedaValor;
+        } else {
+            listEuroMoeda += ' Moeda: Euro' + 'Valor= ' + cofrinho[i].moedaValor;
+        } list.innerHTML = `${listEuroMoeda}`;
+
+
     }
 }
 //função para estilo da página
@@ -132,31 +152,5 @@ document.getElementById('btSomar').addEventListener('click', function calcularTo
 
 })
 
-function listarMoedas(y, x, u) {
-    let resp = document.querySelector('div.resposta');
-    let list = document.querySelector('div.list');
-
-    if (cofrinho.length == 0) {
-        return resp.innerHTML = `Não há moedas no cofrinho`;
-    } else {
-        let listEuroMoeda = 0;
-        for (let i = 0; i < cofrinho.length; i++) {
-            listEuroMoeda += cofrinho[i].y;
-        }
-
-        let listDolarMoeda = 0;
-        for (let i = 0; i < cofrinho.length; i++) {
-            listDolarMoeda += cofrinho[i].x;
-        }
-
-        let listRealMoeda = 0;
-        for (let i = 0; i < cofrinho.length; i++) {
-            listRealMoeda += cofrinho[i].u;
-        }
-
-        list.innerHTML = `${listEuroMoeda} ${listDolarMoeda} ${listRealMoeda}`;
-    }
-
-}
 
 
