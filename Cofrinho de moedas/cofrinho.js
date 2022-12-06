@@ -112,62 +112,49 @@ function styleResposta() {
     let convertidaRealMoeda = document.getElementById('moedaRealConvertida');
     let convertidaDolarMoeda = document.getElementById('moedaDolarConvertida');
     let convertidaEuroMoeda = document.getElementById('moedaEuroConvertida');
-
+    let totalSomado = document.getElementById('valor-total-cofrinho');
     let todaMoedas = document.getElementById('total-todas-qtd-moedas-cofrinho');
-
     let resp = document.getElementById('resposta');
     let list = document.getElementById('list');
-
 
     //cor de fundo dos conteiners div
     convertidaRealMoeda.style.backgroundColor = "#FFA500";
     convertidaDolarMoeda.style.backgroundColor = "#008000";
     convertidaEuroMoeda.style.backgroundColor = "#FF7F50";
 
-    //padding dos conteiners div
-    convertidaRealMoeda.style.padding = "10px";
-    convertidaDolarMoeda.style.padding = "10px";
-    convertidaEuroMoeda.style.padding = "10px";
-
-    convertidaRealMoeda.style.width = "30%";
-    convertidaDolarMoeda.style.width = "30%";
-    convertidaEuroMoeda.style.width = "30%";
-
     //resp
-    resp.style.textAlign = 'center';
     resp.style.backgroundColor = '#054F77';
-    resp.style.width = '200px';
-    resp.style.color = '#fff';
-    resp.style.margin = '10px auto 10px';
-    resp.style.fontSize = '1.5rem';
-    resp.style.borderRadius = '8px';
-
+  
+    //total de moedas no cofre
     todaMoedas.style.backgroundColor = `#35f`;
 
-    list.style.width = '250px';
+    //lista das moedas adicionadas
     list.style.backgroundColor = '#42e';
-    list.style.margin = '20px auto 20px';
+   
+    //soma de todas as moedas convertidas
+    totalSomado.style.background = '#05f';
 }
 
 document.getElementById('btSomar').addEventListener('click', function calcularTotal() {
-
-    let totalDolar = '';
+    let valorTotalTudo = document.querySelector('div.valor-total-cofrinho');
+    
+    let totalDolar = 0;
     for (let i = 0; i < cofrinhodolar.length; i++) {
         totalDolar += cofrinhodolar[i].valorDolar;
     }
-    alert(totalDolar * dolarValor);
-
-    let totalReal = '';
+    
+   
+    let totalReal = 0;
     for (let i = 0; i < cofrinhoreal.length; i++) {
         totalReal += cofrinhoreal[i].valorReal;
     }
-    alert(totalReal * realValor);
 
-    let totalEuro = '';
+    let totalEuro = 0;
     for (let i = 0; i < cofrinhoeuro.length; i++) {
         totalEuro += cofrinhoeuro[i].valorEuro;
     }
-    alert(totalEuro * euroValor);
+    let total = (totalDolar * dolarValor)+ (totalReal + realValor) + (totalEuro +  euroValor);
+    valorTotalTudo.innerHTML = `<p>O valor total convertido para Real é:</p> R$ ${total} `
 
 
 })

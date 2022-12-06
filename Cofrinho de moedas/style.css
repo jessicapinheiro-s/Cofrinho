@@ -63,3 +63,30 @@ body {
     left: 0%;
     right: 0%;
 }
+.valor-total-cofrinho{
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto 20px ;
+    width: 100px;
+    text-align: center;
+
+}
+.resposta{
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto 20px ;
+    width: 200px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+}
+.convertidaRealMoeda,
+.convertidaDolarMoeda
+.convertidaEuroMoeda{
+    width: 30%;
+    padding: 10px;
+}
+.list{
+    width: 250px;
+    margin: 20px auto 20px;
+}
