@@ -19,8 +19,6 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
     let invalorMoeda = document.getElementById('valorMoeda');
 
     let valorMoeda = Number(invalorMoeda.value);
-
-    let resp = document.querySelector('div.resposta');
     let totalQtdMoedas = document.querySelector('div.total-todas-qtd-moedas-cofrinho');
     let tipo;
 
@@ -94,7 +92,7 @@ function validacao(y) {
 function listarMoedas(z) {
     let list = document.querySelector('div.list');
     let resp = document.querySelector('div.resposta');
-
+    
     resp = '';
     for (let i = 0; i < cofrinho.length; i++) {
         if (z[0].checked) {
@@ -107,6 +105,9 @@ function listarMoedas(z) {
 
         }
     } list.innerHTML = `<p>Cofrinho</p>${resp}`;
+
+    let totalMoedas = document.querySelector('div.total-todas-qtd-moedas-cofrinho');
+    totalMoedas.innerHTML= `${cofrinho.length}`;
 }
 //função para estilo da página
 function styleResposta() {
@@ -114,8 +115,9 @@ function styleResposta() {
     let convertidaDolarMoeda = document.getElementById('moedaDolarConvertida');
     let convertidaEuroMoeda = document.getElementById('moedaEuroConvertida');
     let totalSomado = document.getElementById('valor-total-cofrinho');
+    let totalMoedas = document.getElementById('total-todas-qtd-moedas-cofrinho');
    
-    let resp = document.getElementById('resposta');
+ 
     let list = document.getElementById('list');
 
     //cor de fundo dos conteiners div
@@ -123,9 +125,7 @@ function styleResposta() {
     convertidaDolarMoeda.style.backgroundColor = "#008000";
     convertidaEuroMoeda.style.backgroundColor = "#FF7F50";
 
-    //resp
-    resp.style.backgroundColor = '#054F77';
-  
+    totalMoedas.style.backgroundColor = '#7ac72e';
 
     //lista das moedas adicionadas
     list.style.backgroundColor = '#42e';
