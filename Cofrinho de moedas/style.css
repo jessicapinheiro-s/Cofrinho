@@ -110,5 +110,9 @@ body {
     background-color: rgb(122, 199, 46);
 }
 #btAdicionar{
-
+    background-color: rgb(49, 190, 255);
+}
+#btSomar:hover, 
+#btAdicionar:hover{
+    
 }
