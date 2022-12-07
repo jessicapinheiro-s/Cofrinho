@@ -98,6 +98,7 @@ function listarMoedas(z) {
     resp = '';
     for (let i = 0; i < cofrinho.length; i++) {
         if (z[0].checked) {
+            
             resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor= R$ ${cofrinho[i].moedaValor}</p>`;
         } else if (z[1].checked) {
             resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor= $  ${cofrinho[i].moedaValor}</p>`;
@@ -113,7 +114,7 @@ function styleResposta() {
     let convertidaDolarMoeda = document.getElementById('moedaDolarConvertida');
     let convertidaEuroMoeda = document.getElementById('moedaEuroConvertida');
     let totalSomado = document.getElementById('valor-total-cofrinho');
-    let todaMoedas = document.getElementById('total-todas-qtd-moedas-cofrinho');
+   
     let resp = document.getElementById('resposta');
     let list = document.getElementById('list');
 
@@ -125,8 +126,6 @@ function styleResposta() {
     //resp
     resp.style.backgroundColor = '#054F77';
   
-    //total de moedas no cofre
-    todaMoedas.style.backgroundColor = `#35f`;
 
     //lista das moedas adicionadas
     list.style.backgroundColor = '#42e';
@@ -134,7 +133,7 @@ function styleResposta() {
     //soma de todas as moedas convertidas
     totalSomado.style.background = '#05f';
 }
-
+//função para calcular e converter moedas
 document.getElementById('btSomar').addEventListener('click', function calcularTotal() {
     let valorTotalTudo = document.querySelector('div.valor-total-cofrinho');
     
@@ -142,7 +141,6 @@ document.getElementById('btSomar').addEventListener('click', function calcularTo
     for (let i = 0; i < cofrinhodolar.length; i++) {
         totalDolar += cofrinhodolar[i].valorDolar;
     }
-    
    
     let totalReal = 0;
     for (let i = 0; i < cofrinhoreal.length; i++) {
@@ -153,7 +151,7 @@ document.getElementById('btSomar').addEventListener('click', function calcularTo
     for (let i = 0; i < cofrinhoeuro.length; i++) {
         totalEuro += cofrinhoeuro[i].valorEuro;
     }
-    let total = (totalDolar * dolarValor)+ (totalReal + realValor) + (totalEuro +  euroValor);
+    let total = (totalDolar * dolarValor)+ (totalReal) + (totalEuro *  euroValor);
     valorTotalTudo.innerHTML = `<p>O valor total convertido para Real é:</p> R$ ${total} `
 
 
@@ -161,25 +159,6 @@ document.getElementById('btSomar').addEventListener('click', function calcularTo
 
 
 
-document.getElementById('btRemover').addEventListener('click', function calcularTotal() {
 
-
-    let invalorMoeda = document.getElementById('valorMoeda');
-    let valorMoeda = Number(invalorMoeda.value);
-
-    alert("Digite o valor a ser removido e selecione a moeda");
-
-    invalorMoeda.focus();
-    if (z[0].checked) {
-        resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor= R$ ${cofrinho[i].moedaValor}</p>`;
-    } else if (z[1].checked) {
-        resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor= $  ${cofrinho[i].moedaValor}</p>`;
-    } else {
-        resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor=    ${cofrinho[i].moedaValor}</p>`;
-
-    }
-
-
-})
 
 

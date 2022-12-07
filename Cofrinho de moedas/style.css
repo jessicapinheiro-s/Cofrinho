@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     font-size: 1rem;
 }
 .formulario-container {
@@ -41,11 +41,16 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    width:60%;
+    width:70%;
     margin: auto;
 }
 .cofre div{
     border-radius: 8px;
+}
+.dados{
+    display: flex;
+    width: 70%;
+    margin: 20px auto 20px;
 }
 .list{
     color: #fff;
@@ -80,13 +85,30 @@ body {
     color: #fff;
     font-size: 1.5rem;
 }
-.convertidaRealMoeda,
-.convertidaDolarMoeda
-.convertidaEuroMoeda{
-    width: 30%;
-    padding: 10px;
+.moedaRealConvertida,
+.moedaDolarConvertida,
+.moedaEuroConvertida{
+    width: 25%;
+    padding: 20px;
 }
 .list{
     width: 250px;
     margin: 20px auto 20px;
+}
+.title{
+    margin: 20px auto;
+}
+.title h1{
+    text-align: center;
+    font-size: 1.9rem;
+}
+#btSomar, 
+#btAdicionar{
+    border-radius: 5px;
+}
+#btSomar{
+    background-color: rgb(122, 199, 46);
+}
+#btAdicionar{
+
 }
