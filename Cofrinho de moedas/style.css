@@ -159,7 +159,7 @@ body {
 }
 .moedas .tipo-moedas{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 80%;
     margin: auto;
 }
@@ -168,6 +168,7 @@ body {
 .euro-conteiner{
     width: 30%;
     border-radius: 10px;
+    display: none;
 }
 .real-conteiner .real,
 .dolar-conteiner .dolar,

@@ -41,6 +41,7 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
                 o += cofrinhoreal[i].valorReal;
             }
             convertidaRealMoeda.innerHTML += `<p>Moeda adicionada = ${o} Reais </p>  `;
+            document.getElementById('real-conteiner').style.display= 'block'
 
         } else if (tipoMoeda[1].checked) {
             contadorDolar++;
@@ -53,7 +54,7 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
                 oui += cofrinhodolar[i].valorDolar;
             }
             convertidaDolarMoeda.innerHTML += `<p>Moeda adicionada = ${oui} Dólares </p>  `;
-
+            document.getElementById('dolar-conteiner').style.display= 'block'
         } else {
             contadorEuro++;
             tipo = 'Euro';
@@ -66,6 +67,7 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
             }
 
             convertidaEuroMoeda.innerHTML += `<p>Moeda adicionada = ${oi} Euros </p>`;
+            document.getElementById('euro-conteiner').style.display= 'block'
 
 
         }
