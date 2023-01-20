@@ -1,0 +1,13 @@
+@media (max-width:600px){
+    .moedas .tipo-moedas{
+        display: block;
+        width: 80%;
+        margin: auto;
+    }
+    .real-conteiner,
+    .dolar-conteiner,
+    .euro-conteiner{
+        width: 100%;
+        margin: 20px 0px 20px;
+    }
+}

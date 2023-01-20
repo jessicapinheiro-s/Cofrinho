@@ -145,4 +145,26 @@ body {
 }
 .conteiner-geral{
     display: grid;
+    grid-template-columns: 30% 1fr 30% ;
+    grid-template-rows: 1fr 1fr 300px;
+    grid-template-areas: 
+    'formulario formulario formulario '
+    'moeda moeda moeda ';
+}
+.formulario-container{
+    grid-area: formulario;
+}
+.moedas{
+    grid-area: moeda;
+}
+.moedas .tipo-moedas{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+.real-conteiner,
+.dolar-conteiner,
+.euro-conteiner{
+    width: 30%;
 }
