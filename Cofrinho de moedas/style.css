@@ -156,6 +156,7 @@ header .title {
 
 .dados-content .list-total,
 .dados-content .convertido {
+    display: none;
     background-color: #31beff;
     padding: 10px 20px;
     max-width: 30%;

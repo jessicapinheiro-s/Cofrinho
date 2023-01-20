@@ -94,7 +94,8 @@ function validacao(y) {
 function listarMoedas(z) {
     let list = document.querySelector('div.list');
     let resp = document.querySelector('div.resposta');
-    
+    document.getElementById('list-total').style.display='block';
+    document.getElementById('convertido').style.display='block';
     resp = '';
     for (let i = 0; i < cofrinho.length; i++) {
         if (z[0].checked) {
@@ -128,12 +129,6 @@ function styleResposta() {
     convertidaEuroMoeda.style.backgroundColor = "#FF7F50";
 
     totalMoedas.style.backgroundColor = '#7ac72e';
-
-    //lista das moedas adicionadas
-    list.style.backgroundColor = '#42e';
-   
-    //soma de todas as moedas convertidas
-    totalSomado.style.background = '#05f';
 }
 //função para calcular e converter moedas
 document.getElementById('btSomar').addEventListener('click', function calcularTotal() {
