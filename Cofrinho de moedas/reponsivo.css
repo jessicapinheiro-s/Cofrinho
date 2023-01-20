@@ -1,7 +1,15 @@
 @media (max-width:600px){
+    .conteiner-geral{
+        display: grid;
+        grid-template-columns: 50% 50% ;
+        grid-template-rows: 600px 1fr;
+        grid-template-areas: 
+        'formulario formulario  '
+        'moeda moeda  ';
+    }
     .moedas .tipo-moedas{
         display: block;
-        width: 80%;
+        max-width: 80%;
         margin: auto;
     }
     .real-conteiner,

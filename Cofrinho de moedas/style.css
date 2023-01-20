@@ -2,9 +2,9 @@
     margin: 0;
     padding: 0;
 }
-body div{
+/*body div{
     border: 1px solid blue;
-}
+}*/
 body {
     font-family: monospace;
     font-size: 1rem;
@@ -167,4 +167,17 @@ body {
 .dolar-conteiner,
 .euro-conteiner{
     width: 30%;
+    border-radius: 10px;
+}
+.real-conteiner .real,
+.dolar-conteiner .dolar,
+.euro-conteiner .euro{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.real-conteiner .moedaRealConvertida,
+.dolar-conteiner .moedaDolarConvertida,
+.euro-conteiner .moedaEuroConvertida{
+    width: 85%;
 }
