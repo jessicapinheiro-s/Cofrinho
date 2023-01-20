@@ -116,12 +116,8 @@ function styleResposta() {
     let convertidaRealMoeda = document.getElementById('moedaRealConvertida');
     let convertidaDolarMoeda = document.getElementById('moedaDolarConvertida');
     let convertidaEuroMoeda = document.getElementById('moedaEuroConvertida');
-    let totalSomado = document.getElementById('valor-total-cofrinho');
     let totalMoedas = document.getElementById('total-todas-qtd-moedas-cofrinho');
    
- 
-    let list = document.getElementById('list');
-
     //cor de fundo dos conteiners div
     convertidaRealMoeda.style.backgroundColor = "#FFA500";
     convertidaDolarMoeda.style.backgroundColor = "#008000";
