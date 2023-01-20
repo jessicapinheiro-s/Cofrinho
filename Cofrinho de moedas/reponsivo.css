@@ -1,22 +1,41 @@
-@media (max-width:600px){
-    .conteiner-geral{
+@media (max-width:600px) {
+    .conteiner-geral {
         display: grid;
-        grid-template-columns: 50% 50% ;
-        grid-template-rows: 200px 1fr;
-        grid-template-areas: 
-        'formulario formulario  '
-        'moeda moeda  '
-        'dado dado';
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 200px 1fr 100%;
+        grid-template-areas:
+            'formulario formulario  '
+            'moeda moeda  '
+            'dado dado';
     }
-    .moedas .tipo-moedas{
+
+    .moedas .tipo-moedas {
         display: block;
         max-width: 80%;
         margin: auto;
     }
+
     .real-conteiner,
     .dolar-conteiner,
-    .euro-conteiner{
+    .euro-conteiner {
         width: 100%;
         margin: 20px 0px 20px;
+    }
+
+    .dados-content {
+        display: block;
+        width: 80%;
+    }
+
+    .dados-content .list-total,
+    .dados-content .convertido {
+        background-color: #31beff;
+        padding: 10px 20px;
+        max-width: 100%;
+        margin: 15px auto 15px;
+    }
+
+    .dados-content .convertido {
+        max-height: 100px;
     }
 }
