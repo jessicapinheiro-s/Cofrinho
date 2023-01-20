@@ -2,10 +2,11 @@
     .conteiner-geral{
         display: grid;
         grid-template-columns: 50% 50% ;
-        grid-template-rows: 600px 1fr;
+        grid-template-rows: 200px 1fr;
         grid-template-areas: 
         'formulario formulario  '
-        'moeda moeda  ';
+        'moeda moeda  '
+        'dado dado';
     }
     .moedas .tipo-moedas{
         display: block;
