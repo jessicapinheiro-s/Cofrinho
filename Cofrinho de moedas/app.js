@@ -94,8 +94,7 @@ function validacao(y) {
 function listarMoedas(z) {
     let list = document.querySelector('div.list');
     let resp = document.querySelector('div.resposta');
-    document.getElementById('list-total').style.display='block';
-    document.getElementById('convertido').style.display='block';
+    
     resp = '';
     for (let i = 0; i < cofrinho.length; i++) {
         if (z[0].checked) {
@@ -133,7 +132,8 @@ function styleResposta() {
 //função para calcular e converter moedas
 document.getElementById('btSomar').addEventListener('click', function calcularTotal() {
     let valorTotalTudo = document.querySelector('div.valor-total-cofrinho');
-    
+    document.getElementById('list-total').style.display='block';
+    document.getElementById('convertido').style.display='block';
     let totalDolar = 0;
     for (let i = 0; i < cofrinhodolar.length; i++) {
         totalDolar += cofrinhodolar[i].valorDolar;
