@@ -27,7 +27,7 @@ document.getElementById('btAdicionar').addEventListener('click', function addMoe
     let convertidaEuroMoeda = document.querySelector('div.moedaEuroConvertida');
 
     if (validacao(valorMoeda)) {
-        resp.innerHTML = `Preencha o campo corretamente..`;
+        alert('Preencha o campo corretamente..');
         invalorMoeda.focus();
         return;
     } else {
@@ -127,27 +127,31 @@ function styleResposta() {
 }
 //função para calcular e converter moedas
 document.getElementById('btSomar').addEventListener('click', function calcularTotal() {
-    let valorTotalTudo = document.querySelector('div.valor-total-cofrinho');
-    document.getElementById('list-total').style.display='block';
-    document.getElementById('convertido').style.display='block';
-    let totalDolar = 0;
-    for (let i = 0; i < cofrinhodolar.length; i++) {
-        totalDolar += cofrinhodolar[i].valorDolar;
-    }
-   
-    let totalReal = 0;
-    for (let i = 0; i < cofrinhoreal.length; i++) {
-        totalReal += cofrinhoreal[i].valorReal;
-    }
 
-    let totalEuro = 0;
-    for (let i = 0; i < cofrinhoeuro.length; i++) {
-        totalEuro += cofrinhoeuro[i].valorEuro;
+    if(cofrinho.length == 0){
+        alert('Não há moedas no cofre para converter... adicione alguma moeda')
+    }else{
+        let valorTotalTudo = document.querySelector('div.valor-total-cofrinho');
+        document.getElementById('list-total').style.display='block';
+        document.getElementById('convertido').style.display='block';
+        let totalDolar = 0;
+        for (let i = 0; i < cofrinhodolar.length; i++) {
+            totalDolar += cofrinhodolar[i].valorDolar;
+        }
+       
+        let totalReal = 0;
+        for (let i = 0; i < cofrinhoreal.length; i++) {
+            totalReal += cofrinhoreal[i].valorReal;
+        }
+    
+        let totalEuro = 0;
+        for (let i = 0; i < cofrinhoeuro.length; i++) {
+            totalEuro += cofrinhoeuro[i].valorEuro;
+        }
+        let total = (totalDolar * dolarValor)+ (totalReal) + (totalEuro *  euroValor);
+        valorTotalTudo.innerHTML = `R$ ${total} `
     }
-    let total = (totalDolar * dolarValor)+ (totalReal) + (totalEuro *  euroValor);
-    valorTotalTudo.innerHTML = `R$ ${total} `
-
-
+    
 })
 
 
