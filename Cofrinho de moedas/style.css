@@ -95,8 +95,8 @@ header .title {
 .real-conteiner .moedaRealConvertida,
 .dolar-conteiner .moedaDolarConvertida,
 .euro-conteiner .moedaEuroConvertida,
-.dados-content .list-total,
-.dados-content .convertido {
+.dados-content .list,
+.dados-content .valor-total-cofrinho {
     border-radius: 10px;
 }
 .moedas {
@@ -137,22 +137,31 @@ header .title {
 }
 
 .dados-content {
-    width: 60%;
+    width: 80%;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border: 1px solid red;
 }
 
 .dados-content .list-total,
 .dados-content .convertido {
     display: none;
+    width:40%;
+    border: 1px solid red;
+    padding: 20px;
+}
+
+.dados-content .list,
+.dados-content .valor-total-cofrinho {
     background-color: #31beff;
-    padding: 10px 20px;
-    max-width: 30%;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0px;
 }
 .dados-content .convertido {
-    max-height: 80px;
+    height: 100px;
 }
 .total-todas-qtd-moedas-cofrinho {
     font-size: 1.2rem;
@@ -173,4 +182,15 @@ header .title {
     text-align: center;
     color: #fff;
     font-size: 1.5rem;
+}
+/*moedas title*/
+.real,
+.dolar ,
+.euro,
+/*lista e convertido title*/
+.lista-de-moedas,
+.convertido-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
 }
