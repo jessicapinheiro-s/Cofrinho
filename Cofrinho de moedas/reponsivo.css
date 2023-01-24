@@ -12,8 +12,9 @@
             'dado dado';
     }
     .formulario-container {
-        width: 400px;
+        width: 350px;
         padding: 0px;
+        height: 200px;
     }
     .moedas .tipo-moedas {
         display: block;
