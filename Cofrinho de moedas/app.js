@@ -106,7 +106,7 @@ function listarMoedas(z) {
             resp += `<p>Moeda: ${cofrinho[i].tipodeMoeda} | Valor=    ${cofrinho[i].moedaValor}</p>`;
 
         }
-    } list.innerHTML = `<p>Cofrinho</p>${resp}`;
+    } list.innerHTML = `${resp}`;
 
     let totalMoedas = document.querySelector('div.total-todas-qtd-moedas-cofrinho');
     totalMoedas.innerHTML= `${cofrinho.length}`;
@@ -145,7 +145,7 @@ document.getElementById('btSomar').addEventListener('click', function calcularTo
         totalEuro += cofrinhoeuro[i].valorEuro;
     }
     let total = (totalDolar * dolarValor)+ (totalReal) + (totalEuro *  euroValor);
-    valorTotalTudo.innerHTML = `<p>O valor total convertido para Real é:</p> R$ ${total} `
+    valorTotalTudo.innerHTML = `R$ ${total} `
 
 
 })
