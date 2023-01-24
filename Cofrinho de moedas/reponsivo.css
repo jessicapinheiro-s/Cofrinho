@@ -1,7 +1,4 @@
 @media (max-width:600px) {
-    .formulario-container div{
-        border: 1px blue solid;
-    }
     .conteiner-geral {
         display: grid;
         grid-template-columns: 50% 50%;
