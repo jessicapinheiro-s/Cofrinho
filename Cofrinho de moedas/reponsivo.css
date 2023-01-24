@@ -1,4 +1,7 @@
 @media (max-width:600px) {
+    .formulario-container div{
+        border: 1px blue solid;
+    }
     .conteiner-geral {
         display: grid;
         grid-template-columns: 50% 50%;
@@ -8,7 +11,10 @@
             'moeda moeda  '
             'dado dado';
     }
-
+    .formulario-container {
+        width: 400px;
+        padding: 0px;
+    }
     .moedas .tipo-moedas {
         display: block;
         max-width: 80%;
@@ -29,10 +35,9 @@
 
     .dados-content .list-total,
     .dados-content .convertido {
-        background-color: #31beff;
-        padding: 10px 20px;
-        max-width: 100%;
+        width: 80%;
         margin: 15px auto 15px;
+        padding: 0px;
     }
 
     .dados-content .convertido {
